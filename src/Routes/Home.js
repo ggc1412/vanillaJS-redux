@@ -4,6 +4,8 @@ import { actionCreators } from "../store";
 import ToDo from "../components/ToDo";
 
 function Home({ toDos, addToDo }) {
+  // useState의 state는 리덕스의 store state와는 별도이다.
+  // 여기서는 리액트의 state변경으로 input의 렌더링을 처리하고 있다.
   const [text, setText] = useState("");
   function onChange(e) {
     setText(e.target.value);
@@ -26,6 +28,7 @@ function Home({ toDos, addToDo }) {
 }
 
 function mapStateToProps(state) {
+  console.log(state);
   return { toDos: state };
 }
 
